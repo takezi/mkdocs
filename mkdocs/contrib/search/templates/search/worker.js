@@ -46,6 +46,9 @@ function onJSONLoaded () {
     }
     for (var i=0; i < lang.length; i++) {
       if (lang[i] != 'en') {
+        if (lang[i] == 'jp') {
+          scriptsToLoad.push('tinyseg.js');
+        }
         scriptsToLoad.push(['lunr', lang[i], 'js'].join('.'));
       }
     }

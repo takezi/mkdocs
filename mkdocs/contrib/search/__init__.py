@@ -79,6 +79,8 @@ class SearchPlugin(BasePlugin):
                 files.append('lunr.multi.js')
             for lang in self.config['lang']:
                 if (lang != 'en'):
+                    if (lang == 'jp'):
+                        files.append('tinyseg.js')
                     files.append('lunr.{}.js'.format(lang))
 
             for filename in files:
